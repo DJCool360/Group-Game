@@ -161,5 +161,17 @@ public class playerController : MonoBehaviour, IDamage
     gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[gunListPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
   }
 
-  
+  void selectGun()
+  {
+    if (Input.GetAxis("Mouse ScrollWheel") > 0 && gunListPos < gunList.Count - 1)
+      {
+        gunListPos++;
+        changeGun();
+      }
+    else if (Input.GetAxis("Mouse ScrollWheel") < 0 && gunListPos > 0)
+      {
+        gunListPos--;
+        changeGun();
+      }
+  }
 }
