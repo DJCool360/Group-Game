@@ -27,16 +27,27 @@ public class playerController : MonoBehaviour
   Vector3 moveDir;
   Vector3 playerVel;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-      HPOrig = HP;
-      updatePlayerUI();
-    }
+  // Start is called once before the first execution of Update after the MonoBehaviour is created
+  void Start()
+  {
+    HPOrig = HP;
+    updatePlayerUI();
+  }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  // Update is called once per frame
+  void Update()
+  {
+    movement();
+    sprint();
+  }
+
+  public void spawnPlayer()
+  {
+    controller.transform.position = gamemanager.instance.playerSpawnPos.transform.position;
+    Physics.SyncTransforms();
+    HP = HPOrig;
+    updatePlayerUI();
+  }
+  
+  
 }
