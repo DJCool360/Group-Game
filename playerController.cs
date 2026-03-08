@@ -121,4 +121,16 @@ public class playerController : MonoBehaviour, IDamage
       }
   }
 
+  public void takeDamage(int amount)
+  {
+    HP -= amount;
+    updatePlayerUI();
+    StartCoroutine(flashScreen());
+    if (HP <= 0)
+      {
+        gamemanager.instance.youLose();
+      }
+  }
+
+  
 }
