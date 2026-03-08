@@ -112,4 +112,13 @@ public class playerController : MonoBehaviour, IDamage
 
         }
     }
+
+  void reload()
+  {
+    if (Input.GetButtonDown("Reload") && gunList.Count > 0)
+      {
+        gunList[gunListPos].ammoCur = gunList[gunListPos].ammoMax;
+      }
+  }
+
 }
