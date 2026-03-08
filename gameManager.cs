@@ -68,4 +68,19 @@ public class gameManager : MonoBehaviour
     menuActive.SetActive(false);
     menuActive = null;
   }
+
+  public void updateGameGoal(int amount)
+  {
+    gameGoalCount += amount;
+    gameGoalCountText.text = gameGoalCount.ToString("F0");
+    if (gameGoalCount <= 0)
+     {
+       //you win!!
+       statePause();
+       menuActive = menuWin;
+       menuActive.SetActive(true);
+      }
+    }
+
+
 }
