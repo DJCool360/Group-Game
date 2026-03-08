@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : MonoBehaviour, IDamage
 {
   [SerializeField] playerController controller;
   [SerializeField] LayerMask ignoreLayer;
@@ -80,5 +80,17 @@ public class playerController : MonoBehaviour
         playerVel.y = jumpSpeed;
         jumpCount++;
       }
+  }
+
+  void sprint()
+  {
+    if (Input.GetButtonDown("Sprint"))
+      {
+        speed *= sprintMod;
+      }
+     else if (Input.GetButtonUp("Sprint"))
+       {
+         speed /= sprintMod;
+       }
   }
 }
