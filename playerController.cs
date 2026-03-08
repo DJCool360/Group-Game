@@ -132,5 +132,22 @@ public class playerController : MonoBehaviour, IDamage
       }
   }
 
-  
+  IEnumerator flashScreen()
+  {
+    gamemanager.instance.playerDamageFlash.SetActive(true);
+    yield return new WaitForSeconds(0.1f);
+    gamemanager.instance.playerDamageFlash.SetActive(false);
+  }
+
+  public void updatePlayerUI()
+  {
+    gamemanager.instance.playerHPBar.fillAmount = (float)HP / HPOrig;
+  }
+
+  public void getGunStats(gunStats gun)
+  {
+    gunList.Add(gun);
+    gunListPos = gunList.Count - 1;
+    changeGun();
+  }
 }
