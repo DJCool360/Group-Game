@@ -150,4 +150,16 @@ public class playerController : MonoBehaviour, IDamage
     gunListPos = gunList.Count - 1;
     changeGun();
   }
+
+  void changeGun()
+  {
+    shootDamage = gunList[gunListPos].shootDamage;
+    shootDist = gunList[gunListPos].shootDist;
+    shootRate = gunList[gunListPos].shootRate;
+
+    gunModel.GetComponent<MeshFilter>().sharedMesh = gunList[gunListPos].gunModel.GetComponent<MeshFilter>().sharedMesh;
+    gunModel.GetComponent<MeshRenderer>().sharedMaterial = gunList[gunListPos].gunModel.GetComponent<MeshRenderer>().sharedMaterial;
+  }
+
+  
 }
