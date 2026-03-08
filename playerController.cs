@@ -24,10 +24,14 @@ public class playerController : MonoBehaviour
   int gunListPos;
   float shootTimer;
 
+  Vector3 moveDir;
+  Vector3 playerVel;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+      HPOrig = HP;
+      updatePlayerUI();
     }
 
     // Update is called once per frame
