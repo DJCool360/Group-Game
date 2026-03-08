@@ -73,4 +73,12 @@ public class playerController : MonoBehaviour
       reload();
   }
 
+  void jump()
+  {
+    if (Input.GetButtonDown("Jump") && jumpCount < jumpMax)
+      {
+        playerVel.y = jumpSpeed;
+        jumpCount++;
+      }
+  }
 }
