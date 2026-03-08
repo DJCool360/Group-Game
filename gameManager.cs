@@ -51,5 +51,21 @@ public class gameManager : MonoBehaviour
           }
     }
 
+  public void statePause()
+  {
+    isPaused = true;
+    Time.timeScale = 0;
+    Cursor.visible = true;
+    Cursor.lockState = CursorLockMode.None;
+  }
 
+  public void stateUnpause()
+  {
+    isPaused = false;
+    Time.timeScale = timeScaleOrgi;
+    Cursor.visible = false;
+    Cursor.lockState = CursorLockMode.Locked;
+    menuActive.SetActive(false);
+    menuActive = null;
+  }
 }
