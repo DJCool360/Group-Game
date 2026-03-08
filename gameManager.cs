@@ -13,23 +13,27 @@ public class gameManager : MonoBehaviour
 
   [SerializeField] TMP_Text gameGoalCountText;
 
-    public Image playerHPBar;
+  public Image playerHPBar;
 
-    public GameObject playerDamageFlash;
+  public GameObject playerDamageFlash;
 
-    public GameObject player;
-    public playerController playerScript;
-    public bool isPaused;
+  public GameObject player;
+  public playerController playerScript;
+  public bool isPaused;
 
-    float timeScaleOrgi;
+  float timeScaleOrgi;
 
-    int gameGoalCount;
+  int gameGoalCount;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+  void Awake()
+  {
+    instance = this;
+    timeScaleOrgi = Time.timeScale;
+
+    player = GameObject.FindWithTag("Player");
+    playerScript = player.GetComponent<playerController>();
+    playerSpawnPos = GameObject.FindWithTag("Player Spawn Pos");
+  }
 
     // Update is called once per frame
     void Update()
