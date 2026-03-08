@@ -38,6 +38,18 @@ public class gameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+      if (Input.GetButtonDown("Cancel"))
+        if (menuActive == null)
+          {
+            statePause();
+            menuActive = menuPause;
+            menuActive.SetActive(true);
+          }
+        else if (menuActive == menuPause)
+          {
+            stateUnpause();
+          }
     }
+
+
 }
