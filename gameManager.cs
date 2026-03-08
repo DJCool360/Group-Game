@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class gameManager : MonoBehaviour
 {
-  public static gamemanager instance;
+  public static gameManager instance;
 
   [SerializeField] GameObject menuActive;
   [SerializeField] GameObject menuPause;
@@ -18,9 +18,7 @@ public class gameManager : MonoBehaviour
     public GameObject playerDamageFlash;
 
     public GameObject player;
-
     public playerController playerScript;
-
     public bool isPaused;
 
     float timeScaleOrgi;
